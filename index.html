@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Desafio 02</title>
+    <script type="text/javascript" src="CobrasEscadas.js"></script>
+    <script>
+      function inteiroAleatorio() {
+        min = Math.ceil(1);
+        max = Math.floor(6);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      function atualizaPagina(jogador, pos1, pos2){
+        if (jogador !== null){
+          document.getElementById("jogadorvez").innerHTML = jogador;
+        }
+        document.getElementById("pos1").innerHTML = pos1;
+        document.getElementById("pos2").innerHTML = pos2;
+      }
+    </script>
+    <style media="screen">
+      *{
+        box-sizing: border-box;
+      }
+
+      #cabecalho{
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+      }
+
+      #botao{
+        border: 2px solid gray;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 0 auto;
+      }
+      #container{
+        margin-top: 15px;
+      }
+      #tabuleiro{
+        width: 521px;
+        height: 521px;
+        margin: 0 auto;
+        background-image: url("background.png");
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cabecalho">
+      <h2>Jogador da vez: <b id="jogadorvez">1</b></h2>
+      <div>Posição jogador 1: <div id="pos1">1</div></div>
+      <br>
+      <div>Posição jogador 2: <div id="pos2">1</div></div>
+      <button id="botao" type="button" onclick="CobrasEscadas.jogar(inteiroAleatorio(), inteiroAleatorio());" name="button">JOGAR DADO</button>
+    </div>
+    <div id="container">
+      <div id="tabuleiro">
+      </div>
+    </div>
+  </body>
+</html>
